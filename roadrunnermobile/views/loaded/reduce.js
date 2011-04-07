@@ -11,6 +11,7 @@ function(keys, values) {
 	for(var i in keys) {
 		
 		key = keys[i];
+		//key[1] is the _id of the log-Document
 		item = key[0][0];
 		timestamp = key[0][1];
 		logType = key[0][2];
