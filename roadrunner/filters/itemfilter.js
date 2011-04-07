@@ -1,13 +1,13 @@
 function(doc, req) {
 	
-	if (doc.type && doc.type == "item" && req.query_params && req.query_params.items ) {
-		var items = req.query_params.items;
-		for(var i in items) {
-			if (items[i] == doc._id)  {
-				return true;
-			}
+	if (doc.type && doc.type == "item" && req.query && req.query.items) {
+		
+		var items = req.query.items;
+		
+		if (items.indexOf(doc._id) != -1)  {
+			return true;
 		}
-	} else {
-		return false;
 	}
+	
+	return false;
 }
