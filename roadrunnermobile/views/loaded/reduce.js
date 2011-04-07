@@ -18,7 +18,7 @@ function(keys, values) {
 		if (!lastItem || lastItem != item)  {
 			lastItem = item;
 			if (logType == 'LOAD')  {
-				loadedItems.push([item, timestamp]);
+				loadedItems.push({'item':item, 'timestamp':timestamp});
 			}
 		}
 	}
