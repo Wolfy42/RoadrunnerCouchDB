@@ -1,28 +1,20 @@
 function(keys, values) {
 	
-	var key;
-	var item;
+	var value;
 	var timestamp;
-	var logType;
 	
-	var lastItem;
-	var loadedItems = [];
+	var latestValue;
+	var latestTimestamp;
 
-	for(var i in keys) {
+	for (var i in values)  {
 		
-		key = keys[i];
-		//key[1] is the _id of the log-Document
-		item = key[0][0];
-		timestamp = key[0][1];
-		logType = key[0][2];
+		value = values[i];
+		timestamp = value[1];
 		
-		if (!lastItem || lastItem != item)  {
-			lastItem = item;
-			if (logType == 'LOAD')  {
-				loadedItems.push({'item':item, 'timestamp':timestamp});
-			}
-		}
-	}
-
-	return loadedItems;
+		if (!latestTimestamp || latestTimestamp < timestamp)  {
+			latestTimestamp = timestamp;
+			latestValue = value;
+		}  
+	}	
+	return latestValue;
 }
