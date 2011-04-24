@@ -19,7 +19,7 @@ function(head, req) {
 	var row;
 	while(row = getRow()) {
 		
-		row.value.itemLink = path.show("editItem")+"/"+row.value.barcode;
+		row.value.itemLink = path.show("editItem", row.value.barcode);
 		row.value.logsLink = path.list("logs", "logs", {
 			startkey : [row.value.barcode],
 			endkey : [row.value.barcode,{}]
