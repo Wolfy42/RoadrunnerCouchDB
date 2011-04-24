@@ -3,7 +3,7 @@ function(head, req) {
 	// !json templates.tail
 	// !json templates.items
 	
-	var Mustache = require('vendor/couchapp/lib/mustache');
+	var Mustache = require("vendor/couchapp/lib/mustache");
 	var path = require("vendor/couchapp/lib/path").init(req);
 	
 	start({
@@ -18,10 +18,13 @@ function(head, req) {
 	
 	var row;
 	while(row = getRow()) {
-		row.value.link = path.list("logs", "logs", {
+		
+		row.value.itemLink = path.show("editItem");
+		row.value.logsLink = path.list("logs", "logs", {
 			startkey : [row.value.barcode],
 			endkey : [row.value.barcode,{}]
 		});
+		
 		send(Mustache.to_html(templates.items.row, row.value));
 	}
 	

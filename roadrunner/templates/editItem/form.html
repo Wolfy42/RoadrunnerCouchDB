@@ -1,0 +1,30 @@
+<center>
+	<h1>Editing {{barcode}}</h1>
+	<form id="new-item" action="new.html" method="post">
+		<p>
+			<label>Name</label>
+			<input type="text" size="50" name="itemname" value="{{name}}">
+		</p>
+		<p>
+			<input type="submit" value="Save"/>
+			<span id="saved" style="display:none;">Saved</span>
+		</p>
+	</form>
+</center>
+{{>scripts}}
+<script type="text/javascript" charset="utf-8">
+	$.couch.app(function(app) {
+		
+		var postDoc = {{{doc}}};
+		
+		$("form#new-item").submit(function() {
+			postDoc.name = $("input[name=itemname]").val();
+			app.db.saveDoc(postDoc, {
+				success : function(resp) {
+					$("#saved").text("Saved _rev: "+resp.rev).fadeIn(500).fadeOut(6000);
+				}
+	        });
+	        return false;
+	    });
+	});
+</script>
