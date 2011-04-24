@@ -4,6 +4,7 @@ function(head, req) {
 	// !json templates.logs
 	
 	var Mustache = require('vendor/couchapp/lib/mustache');
+	var path = require("vendor/couchapp/lib/path").init(req);
 	
 	start({
 		"headers": {
@@ -21,7 +22,7 @@ function(head, req) {
 		send(Mustache.to_html(templates.logs.row, row.value));
 	}
 	
-	send(Mustache.to_html(templates.logs.tail, null));
+	send(Mustache.to_html(templates.logs.tail, {backLink : path.list("items", "items")}));
 	
 	send(Mustache.to_html(templates.tail, null));
 }

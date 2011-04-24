@@ -5,7 +5,8 @@ function(doc, req)	{
 	// !json templates.editItem
 	
 	var Mustache = require("vendor/couchapp/lib/mustache");
-
+	var path = require("vendor/couchapp/lib/path").init(req);
+	
 	var html;
 	
 	start({
@@ -19,7 +20,8 @@ function(doc, req)	{
 	var data = {
 		name : doc.name,
 		barcode : doc._id,
-		doc : JSON.stringify(doc)
+		doc : JSON.stringify(doc),
+		backLink : path.list("items", "items")
 	};
 	
 	var partials = {
