@@ -36,3 +36,6 @@ install_git()
 
 # couchapp-vendor
 install_git roadrunner/vendor/couchapp https://github.com/couchapp/vendor.git origin/master
+
+#JSON Schema Validator
+install_git roadrunnerschema/vendor/json-schema https://github.com/kriszyp/json-schema.git origin/master
