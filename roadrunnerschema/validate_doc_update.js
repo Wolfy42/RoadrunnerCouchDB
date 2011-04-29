@@ -13,7 +13,12 @@ function (newDoc, oldDoc, userCtx ) {
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}
-
+	
+	docSchema.properties._id = {type : 'string', required : true};
+	docSchema.properties._rev = {type : 'string', required : true};
+	docSchema.properties._revisions = {type : 'object', required : false};
+	
+	
 	var res = Validator.validate(newDoc, docSchema);
 
 	if (res.valid == false)  {
