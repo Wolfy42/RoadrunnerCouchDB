@@ -5,6 +5,7 @@ function (newDoc, oldDoc, userCtx ) {
 	// !code vendor/json-schema/lib/validate.js
 	var Validator = module.exports;
 	
+	// !code util.js
 	// !json schema
 	var docSchema;
 	var type = newDoc.type;
@@ -12,6 +13,7 @@ function (newDoc, oldDoc, userCtx ) {
 		docSchema = schema.item;
 	}  else if (type == 'log')  {
 		docSchema = schema.log;
+		newDoc.items = objectToStringArray(newDoc.items);
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}
