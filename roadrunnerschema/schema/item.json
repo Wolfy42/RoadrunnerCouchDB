@@ -8,7 +8,15 @@
         "name": {
             "type" : "string",
             "required" : true 
-        } 
+        },
+        "tempMin": {
+            "type" : "number",
+            "required" : false 
+        },
+        "tempMax": {
+            "type" : "number",
+            "required" : false 
+        }    
     },
     "additionalProperties": false
 }
