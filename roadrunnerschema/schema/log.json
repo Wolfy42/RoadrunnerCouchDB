@@ -1,0 +1,38 @@
+{
+    "properties": {
+        "type": {
+            "type" : "string",
+            "enum" : ["log"],
+            "required" : true 
+        },
+        "timestamp": {
+            "type" : "number",
+            "required" : true 
+        },
+        "logType": {
+            "type" : "string",
+            "enum" : ["REGISTER",
+            		  "UNREGISTER",
+					  "LOAD",
+					  "UNLOAD",
+					  "TRACK",
+					  "TEMPSENSOR",
+					  "POSSENSOR",
+					  "SENSOR_NOT_ACCESSIBLE"
+					 ],
+            "required" : true 
+        },
+        "value": {
+            "type" : "string",
+            "required" : true 
+        },  
+        "items": {
+            "type":"array",
+            "items":{
+            	"type":"string"
+            },
+        	"required" : true 
+        }
+    },
+    "additionalProperties": false
+}
