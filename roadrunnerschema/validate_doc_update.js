@@ -13,7 +13,7 @@ function (newDoc, oldDoc, userCtx ) {
 		docSchema = schema.item;
 	}  else if (type == 'log')  {
 		docSchema = schema.log;
-		newDoc.items = objectToStringArray(newDoc.items);
+		newDoc.items = objectToArray(newDoc.items);
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}

@@ -1,7 +1,7 @@
-function objectToStringArray(object)  {
+function objectToArray(object)  {
 	var arr = [];
-	for (var string in JSON.stringify(object))  {
-		arr.push(string);
+	for (var i in object)  {
+		arr.push(object[i]);
 	}
 	return arr;
 }
