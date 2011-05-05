@@ -10,6 +10,8 @@ function (newDoc, oldDoc, userCtx ) {
 	var type = newDoc.type;
 	if (type == 'item')  {
 		docSchema = schema.item;
+	}  else if (type == 'log')  {
+		docSchema = schema.log;
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}
