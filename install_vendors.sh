@@ -34,8 +34,14 @@ install_git()
     cd ..
 }
 
+# Design-Document Roadrunner
+cd roadrunner && rm -rf vendor && mkdir vendor && cd vendor
 # couchapp-vendor
-install_git roadrunner/vendor/couchapp https://github.com/couchapp/vendor.git origin/master
+install_git couchapp https://github.com/couchapp/vendor.git origin/master
+cd .. && cd ..
 
+# Design-Document RoadrunnerSchema
+cd roadrunnerschema && rm -rf vendor && mkdir vendor && cd vendor
 #JSON Schema Validator
-install_git roadrunnerschema/vendor/json-schema https://github.com/kriszyp/json-schema.git origin/master
+install_git json-schema https://github.com/kriszyp/json-schema.git origin/master
+cd .. && cd ..
