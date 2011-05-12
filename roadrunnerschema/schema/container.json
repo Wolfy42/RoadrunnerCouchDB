@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "type": {
+            "type" : "string",
+            "enum" : ["container"],
+            "required" : true 
+        },
+        "name": {
+            "type" : "string",
+            "required" : true 
+        },  
+        "sensors": {
+            "type":"array",
+            "items":{
+            	"type":"string"
+            },
+        	"required" : true 
+        }
+    },
+    "additionalProperties": false
+}

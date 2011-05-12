@@ -17,6 +17,9 @@ function (newDoc, oldDoc, userCtx ) {
 	}  else if (type == 'delivery')  {
 		docSchema = schema.delivery;
 		newDoc.items = objectToArray(newDoc.items);
+	}  else if (type == 'container')  {
+		docSchema = schema.container;
+		newDoc.sensors = objectToArray(newDoc.sensors);
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}
