@@ -5,7 +5,7 @@ function(doc) {
 			emit([doc.items[i], doc.timestamp], {
 				logType : doc.logType,
 				timestamp : doc.timestamp,
-				description : doc.description
+				value : doc.value
 			});
 		}
 	}

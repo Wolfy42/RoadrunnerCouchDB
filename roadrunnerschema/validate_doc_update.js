@@ -14,6 +14,9 @@ function (newDoc, oldDoc, userCtx ) {
 	}  else if (type == 'log')  {
 		docSchema = schema.log;
 		newDoc.items = objectToArray(newDoc.items);
+	}  else if (type == 'delivery')  {
+		docSchema = schema.delivery;
+		newDoc.items = objectToArray(newDoc.items);
 	}  else  {
 		throw({forbidden : 'unknown document'});
 	}
