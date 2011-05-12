@@ -1,0 +1,77 @@
+{
+    "properties": {
+        "type": {
+            "type" : "string",
+            "enum" : [
+                "delivery" 
+            ],
+            "required" : true 
+        },
+        "created_at": {
+            "type": "number",
+            "required": true 
+        },
+        "modified_at": {
+            "type": "number",
+            "required": false 
+        },
+        "from_address": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true 
+                },
+                "street": {
+                    "type": "string",
+                    "required": true 
+                },
+                "zip": {
+                    "type": "string",
+                    "required": true 
+                },
+                "city": {
+                    "type": "string",
+                    "required": true 
+                },
+                "country": {
+                    "type": "string",
+                    "required": true 
+                } 
+            } 
+        },
+        "to_address": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "required": true 
+                },
+                "street": {
+                    "type": "string",
+                    "required": true 
+                },
+                "zip": {
+                    "type": "string",
+                    "required": true 
+                },
+                "city": {
+                    "type": "string",
+                    "required": true 
+                },
+                "country": {
+                    "type": "string",
+                    "required": true 
+                } 
+            } 
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "string" 
+            },
+            "required" : true 
+        } 
+    },
+    "additionalProperties": false
+}
