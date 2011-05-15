@@ -21,17 +21,12 @@ function(keys, values) {
 	if (latestLog == null)  {
 		log = {status : 'Registered'};
 	}  else  {
-		log = {
-			timestamp : latestLog.timestamp,
-			type : latestLog.type,
-			value : latestLog.value,
-			logType : latestLog.logType
-		};
-		if (latestLog.logType == 'LOAD')  {
-			log.status = 'Loaded in ' + latestLog.value;
-		}  else if (latestLog.logType == 'UNLOAD') {
-			log.status = 'Unloaded';
-		}  else  if (latestLog.logType == 'UNREGISTER')  {
+		log = latestLog;
+		if (log.logType == 'LOAD')  {
+			log.status = 'Loaded in ' + log.value;
+		}  else if (log.logType == 'UNLOAD') {
+			log.status = 'Unloaded from ' +  log.value;
+		}  else  if (log.logType == 'UNREGISTER')  {
 			log.status = 'Delivered';
 		}
 	}
