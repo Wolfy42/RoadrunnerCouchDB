@@ -1,5 +1,8 @@
 function(doc) {
 	if (doc.type == 'container')  {
-		emit(null, doc.name);
+		emit(doc.id, {
+			name: doc.name,
+			sensors: doc.sensors
+		});
 	}
 }
