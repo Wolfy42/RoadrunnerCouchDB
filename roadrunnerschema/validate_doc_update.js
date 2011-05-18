@@ -1,5 +1,5 @@
 function (newDoc, oldDoc, userCtx ) {
-	 
+	
 	var module = {};
 	module.exports = {};
 	// !code vendor/json-schema/lib/validate.js
@@ -21,7 +21,12 @@ function (newDoc, oldDoc, userCtx ) {
 		docSchema = schema.container;
 		newDoc.sensors = objectToArray(newDoc.sensors);
 	}  else  {
-		throw({forbidden : 'unknown document'});
+		//Just if a unknown document will be inserted/updated there will be an error
+		if (newDoc._deleted == true)  {
+			return;
+		}  else  {
+			throw({forbidden : 'Unknown document!'});
+		}
 	}
 	
 	// for CouchDB
