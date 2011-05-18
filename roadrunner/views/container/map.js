@@ -1,3 +1,5 @@
 function(doc) {
-  emit(doc._id, doc);
+	if (doc.type == 'container')  {
+		emit(null, doc.name);
+	}
 }
