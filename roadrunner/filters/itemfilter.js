@@ -11,7 +11,7 @@ function(doc, req) {
 	}  else if (doc.type == "delivery")  {
 		for (var i in doc.items)  {
 			if (items.indexOf(doc.items[i]) != -1)  {
-				return true
+				return true;
 			}
 		}
 	}
