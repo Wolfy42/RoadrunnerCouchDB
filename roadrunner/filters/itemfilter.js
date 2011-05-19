@@ -9,8 +9,9 @@ function(doc, req) {
 			return true;
 		}
 	}  else if (doc.type == "delivery")  {
-		for (var i in doc.items)  {
-			if (items.indexOf(doc.items[i]) != -1)  {
+		var deliveryItems = doc.doctrine_metadata.associations.items;
+		for (var i in deliveryItems)  {
+			if (items.indexOf(deliveryItems[i]) != -1)  {
 				return true;
 			}
 		}
