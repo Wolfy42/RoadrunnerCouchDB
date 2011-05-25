@@ -32,6 +32,7 @@ function (newDoc, oldDoc, userCtx ) {
 	// for CouchDB
 	docSchema.properties._id = {type : 'string', required : true};
 	docSchema.properties._rev = {type : 'string', required : false};
+	docSchema.properties._attachments = {type : 'object', required : false};
 	docSchema.properties._revisions = {type : 'object', required : false};
 	// for Doctrine
 	docSchema.properties.doctrine_metadata = {type : 'object', required : false};
