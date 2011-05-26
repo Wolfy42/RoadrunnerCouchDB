@@ -11,14 +11,13 @@
         },
         "logType": {
             "type" : "string",
-            "enum" : ["REGISTER",
-            		  "UNREGISTER",
-					  "LOAD",
-					  "UNLOAD",
-					  "TRACK",
-					  "TEMPSENSOR",
-					  "POSSENSOR",
-					  "SENSOR_NOT_ACCESSIBLE"
+            "enum" : [  "UNREGISTER",
+						"LOAD",
+						"UNLOAD",
+						"TEMPSENSOR",
+						"POSSENSOR",
+						"TEMPERROR",
+						"POSERROR"
 					 ],
             "required" : true 
         },
