@@ -5,7 +5,7 @@ function(doc) {
 			var long = doc.value.split(',')[1];
 			for (var i in doc.items)  {
 				emit([doc.items[i],lat,long], {
-					timestamp: Math.floor(doc.timestamp/1000),
+					timestamp: doc.timestamp,
 					lat: lat,
 					long: long
 				});

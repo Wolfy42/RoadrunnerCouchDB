@@ -5,7 +5,7 @@ function(doc) {
 			emit([doc.items[i], doc.timestamp], {
 				logType : doc.logType,
 				value : doc.value,
-				timestamp : Math.floor(doc.timestamp / 1000),
+				timestamp : doc.timestamp,
 			});
 		}
 	}
