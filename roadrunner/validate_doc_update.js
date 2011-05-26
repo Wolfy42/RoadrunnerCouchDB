@@ -20,5 +20,10 @@ function (newDoc, oldDoc, userCtx ) {
 			throw({forbidden : 'Insufficient rights!'});
 		}
 	}
+	if (newDoc != null && oldDoc != null)  {
+		if (userCtx.roles.indexOf(office) == -1)  {
+			throw({forbidden : 'Insufficient rights!'});
+		}
+	}
 }
 
