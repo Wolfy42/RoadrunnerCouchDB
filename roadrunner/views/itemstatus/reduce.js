@@ -27,7 +27,7 @@ function(keys, values) {
 		}  else if (log.logType == 'UNLOAD') {
 			log.status = 'Unloaded from ' +  log.value;
 		}  else  if (log.logType == 'UNREGISTER')  {
-			log.status = 'Delivered';
+			log.status = 'Delivered from ' + log.value;
 		}
 	}
 	
