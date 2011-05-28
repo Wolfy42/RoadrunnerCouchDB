@@ -17,7 +17,8 @@
 						"TEMPSENSOR",
 						"POSSENSOR",
 						"TEMPERROR",
-						"POSERROR"
+						"POSERROR",
+						"TIMESYNCHRONIZATION"
 					 ],
             "required" : true 
         },
